@@ -1,2 +1,1 @@
-sName = input("What is your name?")
-print("Hello " + sName + " welcome to the world")
+print("Hello " + input("What is your name?") + " welcome to the world")
