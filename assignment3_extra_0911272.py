@@ -1,4 +1,6 @@
-number = int(input("choose a number!"))
+number = input("choose a number!")
 
 for i in range(0, number):
-	print(i * '*')
+	print("*"+((number-1)-i) * '*' + i * " " + "*")
+
+print((number+1) * '*')
