@@ -1,4 +1,4 @@
-print("Witch exercise u wanna see? 1, 2 or 3?")
+print("Witch exercise do u wanna see? 1, 2 or 3?")
 sChoice = input("> ")
 if sChoice == 1:
    # a:
@@ -106,6 +106,6 @@ elif sChoice == 2:
 
     print(sMessage)
 elif sChoice == 3:
-    print("Exercise 3!")
+    print("Exercise 3 could be found in folder exercise 3.")
 else:
     print("Not a valid exercise!")
