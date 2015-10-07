@@ -26,6 +26,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="assignment4_exercise1-2_0911272.py" />
     <Compile Include="End.py">
       <SubType>Code</SubType>
     </Compile>
