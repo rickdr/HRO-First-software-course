@@ -8,33 +8,35 @@ if iValue == 1:
         sEnd = sChar + sEnd
 
     print sEnd
-
 elif iValue == 2:
     sValue = raw_input("Choose a password!")
+    
+    sDigits = "0123456789"
+    sLowerChars = "abcdefghijklmnopqrstuvwxyz"
+    sUpperChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     sSpecialChars = "~`!@#$%€^&*()_+=-{}[]|\:;'<>?"
+
     iCountDigit = 0
+    iCountLower = 0
     iCountUpper = 0
     iCountSpecial = 0
 
-    iCountChar = len(sValue)
+    for sChar in sValue:
+        if sChar in sDigits:
+            iCountDigit = iCountDigit + 1
+        elif sChar in sLowerChars:
+            iCountLower = iCountLower + 1        
+        elif sChar in sUpperChars:
+            iCountUpper = iCountUpper + 1
+        elif sChar in sSpecialChars:
+            iCountSpecial = iCountSpecial + 1
 
-    if iCountChar < 6:
-        sMessage = "password is to short!"
+    if iCountDigit >= 2 and iCountUpper >= 2 and iCountLower >= 7 and iCountSpecial >= 1:
+        sMessage = "Password is strong!"         
+    elif iCountDigit >= 1 and iCountLower >= 7 and (iCountUpper >= 1 or iCountSpecial >= 1):
+        sMessage = "Password is medium"
     else:
-        for sChar in sValue:
-            if sChar.isdigit():
-                iCountDigit = iCountDigit + 1
-            elif sChar.isupper():
-                iCountUpper = iCountUpper + 1
-            elif sChar in sSpecialChars:
-                iCountSpecial = iCountSpecial + 1
-
-        if iCountDigit >= 2 and iCountUpper >= 2 and iCountSpecial >= 1:
-            sMessage = "Password is strong!"         
-        elif iCountDigit >= 1  and (iCountUpper >= 1 or iCountSpecial >= 1):
-            sMessage = "Password is medium"
-        else:
-            sMessage = "Password is weak!"
+        sMessage = "Password is weak!"
 
     print sMessage
 elif iValue == 3:
@@ -58,6 +60,7 @@ elif iValue == 3:
             elif iNew < iBegin:
                 iNew += iAmountAlpabeth
             sAllcharacters += chr(iNew)
+
     print sAllcharacters
 else:
     print "This is not a valid exercise"
